@@ -1,0 +1,41 @@
+header h1 {
+    text-align: center;
+    background-color: aqua;
+    border-radius: 20px;
+    padding:10px 0;
+}
+
+/* Pendiente: Ajustar espaciado para formato móvil */
+header nav ul {
+    list-style-type: none;
+    margin: auto;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 5px 20px;
+    border: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: aqua;
+    text-decoration: none;
+}
+
+header nav ul li a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    font-size: small;
+    line-height: 0.3em;
+    text-align: right;
+}
+
+@media screen and (max-width: 580px) {
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
