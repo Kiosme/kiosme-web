@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: beige;
+        }
+        .button {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+        .column.side {
+            width: 25%;
+            }
+        .column.middle {
+            width: 50%;
+            }
+        body {
+            margin: 0;
+        }
+        .header{
+            background-color: #2fc30a;
+            padding: 20px;
+            text-align: center;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #00d76f;
+            text-align: center;
+             }
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }   
+        .topnav a:hover {
+             background-color: #2d96ec;
+             color: black;
+            }
+        .column {
+            float: right;
+            padding: 15px;
+            width: 33.33%;;
+            }
+        .row::after {
+                content: "";
+                display: table;
+                clear: both;
+                }
+            @media screen and (max-width:700px) {
+                .column {
+                    width: 50%;
+                }
+            }
+        .footer {
+                background-color: #f1f1f1;
+                padding: 10px;
+                text-align: center;
+                }
+        </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pymes-Apoyo</title>
+</head>
+<body>
+    <div class="header">
+        <H1>Pymes-Apoyo</H1>
+        <P>Aqui lo ayudaremos en poder ver sus ganacias y <br> hacer un inventario de los insumos</P>
+    </div>
+    <div class="topnav">
+        <a href="#">Descargar</a>
+        <a href="#">Bloq</a>
+        <a href="#">Soporte</a>
+    </div>
+    <div class="row">
+        <div class="column side">
+            <H2>Registrate aqui para <br> acceder a la Demo desde la web</H2>
+            <form action="http://127.0.0.1:5500/part-2.html">
+                <button class="button">Registrate</button>
+            </form>
+        </div>
+        <div class="column">
+                <h1>Objetivo</h1>
+                <p>Es apoyar a las pequeñas empresas como <br> las Pymes a dar herramientas para organizarse con sus ganacias y tener un orden del inventario.</p>
+         </div>
+         <div class="column side" style="float: left;">
+            <h1>Sobre Nosotros</h1>
+            <p>consulte a este correo para conocernos: [inserte correo de empresa]</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <H1>Esta en desarrollo el programa, pero puede probar la Demo presionando Registrate ^</H1>
+      </div>
+</body>
+</html>

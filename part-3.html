@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: #4CAF50;
+        }
+        table, th, td,tr {
+            border: 1px solid;
+        }
+        table{
+            width: 100%;
+        }
+        input[type=number], select {
+          width: 10%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        input[type=text], select {
+          width: 10%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        div {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario y Ganacias</title>
+</head>
+<body>
+    <h1>Inventario</h1>
+    <div>
+        <form>
+            <label>producto_1:</label>
+            <input type="text" placeholder="nombre del producto">
+            <label>cantidad:</label>
+            <input type="number" placeholder="cantidad">
+            <label>producto_2:</label>
+            <input type="text" placeholder="nombre del producto">
+            <label>cantidad:</label>
+            <input type="number" placeholder="cantidad">
+            <label>producto_3:</label>
+            <input type="text" placeholder="nombre del producto">
+            <label>cantidad:</label>
+            <input type="number" placeholder="cantidad"><br><br>
+            <label>producto_4:</label>
+            <input type="text" placeholder="nombre del producto">
+            <label>cantidad:</label>
+            <input type="number" placeholder="cantidad">
+            <label>producto_5:</label>
+            <input type="text" placeholder="nombre del producto">
+            <label>cantidad:</label>
+            <input type="number" placeholder="cantidad">
+            <label>producto_6:</label>
+            <input type="text" placeholder="nombre del producto">
+            <label>cantidad:</label>
+            <input type="number" placeholder="cantidad">
+        </form>
+    </div>
+    <H1>Registros de ganacias</H1>
+    <h2>Con cada venta registrada se sumaran con mas registros en la tabla en el futuros</h2>
+    <div>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>producto</th>
+                <th>cantidad</th>
+                <th>Pago</th>
+                <th>tipo de Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+            </tr>
+        </table>
+        <label>producto</label>
+        <input type="text" placeholder="nombre del producto">
+        <label>cantidad:</label>
+        <input type="number" placeholder="cantidad">
+        <label>Pago</label>
+        <input type="number" placeholder="cuanto pago?">
+        <label>Tipo de Pago</label>
+        <select name="Tipo de pago">
+            <option value="Efectivo">Efectivo</option>
+            <option value="Credito">Credito</option>
+            <option value="Cuenta Rut">Cuenta</option>
+        </select>
+        <button class="button">Registrar</button>
+    </div>
+</body>
+</html>
