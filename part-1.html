@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <meta charset="utf-8">
     <style>
         body{
             background-color: beige;
@@ -53,6 +54,9 @@
             padding: 15px;
             width: 33.33%;;
             }
+        #sobre-nosotros {
+            float: left;
+        }
         .row::after {
                 content: "";
                 display: table;
@@ -69,39 +73,38 @@
                 text-align: center;
                 }
         </style>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pymes-Apoyo</title>
+    <title>Kiosme</title>
 </head>
 <body>
     <div class="header">
-        <H1>Pymes-Apoyo</H1>
+        <img src="logo.png" alt="Kiosme" width="300px">
         <P>Aqui lo ayudaremos en poder ver sus ganacias y <br> hacer un inventario de los insumos</P>
     </div>
     <div class="topnav">
         <a href="#">Descargar</a>
-        <a href="#">Bloq</a>
+        <a href="#">Blog</a>
         <a href="#">Soporte</a>
     </div>
     <div class="row">
         <div class="column side">
-            <H2>Registrate aqui para <br> acceder a la Demo desde la web</H2>
-            <form action="http://127.0.0.1:5500/part-2.html">
-                <button class="button">Registrate</button>
+            <H2>Registrate aquí para <br> acceder a la Demo desde la web</H2>
+            <form action="part-2.html">
+                <button type="button" class="button">Regístrate</button>
             </form>
         </div>
         <div class="column">
                 <h1>Objetivo</h1>
-                <p>Es apoyar a las pequeñas empresas como <br> las Pymes a dar herramientas para organizarse con sus ganacias y tener un orden del inventario.</p>
+                <p>Es apoyar a las pequeñas empresas como <br> las Pymes a dar herramientas para organizarse con sus ganacias y tener un órden del inventario.</p>
          </div>
-         <div class="column side" style="float: left;">
+         <div id="sobre-nosotros" class="column side">
             <h1>Sobre Nosotros</h1>
-            <p>consulte a este correo para conocernos: [inserte correo de empresa]</p>
+            <p>Consulte a este correo para conocernos: <a href="mailto:contacto@kiosme.cl">contacto@kiosme.cl</a></p>
         </div>
         
     </div>
     <div class="footer">
-        <H1>Esta en desarrollo el programa, pero puede probar la Demo presionando Registrate ^</H1>
+        <H1>Está en desarrollo el programa, pero puede probar la Demo presionando Registrate ^</H1>
       </div>
 </body>
 </html>
