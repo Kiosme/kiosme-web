@@ -49,7 +49,8 @@
         div {
           border-radius: 5px;
           background-color: #f2f2f2;
-          padding: 20px;
+          padding: 10px;
+          text-align: center;
         }
         </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,16 +58,22 @@
 </head>
 <body>
     </div>
-    <H1>Registros de ganacias</H1>
-    <h2>Con cada venta registrada se sumaran con mas registros en la tabla en el futuros</h2>
+    <H1>Inventario</H1>
+    <h2>Se hara para organizar los productos o suministros</h2>
+    <div>
+        <label for="producto-total">producto</label>
+        <input id="producto-total" type="text" placeholder="nombre del producto">
+        <label for="cantidad-total">cantidad:</label>
+        <input id="cantidad-total" type="number" placeholder="cantidad">
+        <button class="button">Registrar</button>
+    </div>
+    <br><br>
     <div>
         <table>
             <tr>
                 <th>id</th>
                 <th>producto</th>
                 <th>cantidad</th>
-                <th>Pago</th>
-                <th>tipo de Pago</th>
             </tr>
             <tr>
                 <td>1</td>
@@ -75,19 +82,21 @@
                 <td>2</td>
             </tr>
         </table>
-        <label for="producto-total">producto</label>
-        <input id="producto-total" type="text" placeholder="nombre del producto">
-        <label for="cantidad-total">cantidad:</label>
-        <input id="cantidad-total" type="number" placeholder="cantidad">
-        <label for="costo">Pago</label>
-        <input id="costo" type="number" placeholder="cuanto pago?">
-        <label for="tipo-pago">Tipo de Pago</label>
-        <select id="tipo-pago" name="Tipo de pago">
-            <option value="Efectivo">Efectivo</option>
-            <option value="Credito">Credito</option>
-            <option value="Cuenta Rut">Cuenta</option>
-        </select>
-        <button class="button">Registrar</button>
+        <br>
+        <p>
+            <button class="button">Modificar Producto</button>   
+            <button class="button">guardar</button>   
+            <button class="button">Actualizar</button>
+        </p>
+    </div>
+    <br><br>
+    <div style="height:200px; width:200px">
+        <label>Producto: </label> 
+        <select name="" id=""></select><br><br>
+        <label>Rest. cant: </label>
+        <input type="number" name="" id=""><br>
+        <button class="button">Modificar producto</button>
+        <button class="button">borrar producto</button>
     </div>
 </body>
 </html>
