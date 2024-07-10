@@ -15,6 +15,7 @@ function crear_px(){
     new_row.insertCell(1).innerHTML = nombre_px_inp;
     new_row.insertCell(2).innerHTML = cantidad_px_inp;
     //guardado en localstorage
+    
     localStorage.setItem("id",id)
     localStorage.setItem("nombre_px_inp",nombre_px_inp)
     localStorage.setItem("cantidad_px_inp",cantidad_px_inp)

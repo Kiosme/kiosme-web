@@ -30,18 +30,20 @@
         <h2 style="text-align: center;">Se hara para organizar los productos o suministros</h2>
     </div>
     <br><br>
-    <div class="center" style="background-color: white;">
-        <div class="bg-light p-3" style="width: 650px;">
-
-            <label for="nombre_px">producto</label>
-            <input id="nombre_px" type="text" placeholder="nombre del producto">
-
-            <label for="cant_px">cantidad:</label>
-            <input id="cant_px" type="number" placeholder="cantidad">
-            
-            <button class="btn btn-primary" onclick="crear_px()">Añadir</button>
+    <form action="C:\xampp\htdocs\Kiosme\concect.php" method="post">
+        <div class="center" style="background-color: white;">
+            <div class="bg-light p-3" style="width: 650px;">
+    
+                <label for="nombre_px">producto</label>
+                <input id="nombre_px" type="text" placeholder="nombre del producto">
+    
+                <label for="cant_px">cantidad:</label>
+                <input id="cant_px" type="number" placeholder="cantidad">
+                
+                <button class="btn btn-primary" onclick="crear_px()">Añadir</button>
+            </div>
         </div>
-    </div>
+    </form>
     <br><br>
     <div class="bg-light p-3">
         <table class="table table-striped" id="add_tl">
