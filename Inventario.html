@@ -21,7 +21,7 @@
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/Javascript/programa.js"></script>
+    <script src="Javascript/programa.js"></script>
     <title>Inventario</title>
 </head>
 <body>
@@ -30,15 +30,18 @@
         <h2 style="text-align: center;">Se hara para organizar los productos o suministros</h2>
     </div>
     <br><br>
-    <form action="C:\xampp\htdocs\Kiosme\concect.php" method="post">
+    <form action="Kiosme/concect.php" method="post">
         <div class="center" style="background-color: white;">
             <div class="bg-light p-3" style="width: 650px;">
+
+                <label for="id2">id</label>
+                <input id="id" type="number" name="id" placeholder="nombre del producto">
+
+                <label for="nombre">producto</label>
+                <input id="nombre_px" type="text" name="nombre_px" placeholder="nombre del producto">
     
-                <label for="nombre_px">producto</label>
-                <input id="nombre_px" type="text" placeholder="nombre del producto">
-    
-                <label for="cant_px">cantidad:</label>
-                <input id="cant_px" type="number" placeholder="cantidad">
+                <label for="cant">cantidad:</label>
+                <input id="cant_px" type="number" name="cant_px" placeholder="cantidad">
                 
                 <button class="btn btn-primary" onclick="crear_px()">Añadir</button>
             </div>
