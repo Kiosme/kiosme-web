@@ -41,7 +41,7 @@
             <div class="bg-light p-3" style="width: 650px;">
 
                 <label for="id2">ID:</label>
-                <input id="id" type="number" name="id" placeholder="ID"><br>
+                <input id="id" type="number" name="id" placeholder="ID" min="1" step="1"><br>
 
                 <label for="nombre">Producto:</label>
                 <input id="nombre_px" type="text" name="nombre_px" placeholder="Nombre del producto"><br>
@@ -55,8 +55,10 @@
     </form>
     <br><br>
 
+
+
     <div class="bg-light p-3">
-        <table class="table table-striped" id="add_tl" action="read.php">
+        <table class="table table-striped" id="add_tl">
             <tr>
                 <th>ID</th>
                 <th>Producto</th>
