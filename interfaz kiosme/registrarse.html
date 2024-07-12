@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosme | Crear Cuenta</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="header">
+        <img src="kiosme.png" width="175" height="69">
+      </div>
+
+    <div class="wrapper">
+        <form action="">
+            <h2 style="text-decoration: underline;">Registro</h2>
+            <div class="input-box">
+                <input type="text" placeholder="Nombre" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Correo electrónico" required>
+                <i class='bx bx-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Contraseña" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Repite la contraseña" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            
+            <!--<div class="pass-forgot">
+                <label><input type="checkbox">¿No recuerdas tu contraseña? </label><a
+                href="recuperar-pass.html">Haga clic aquí</a>
+            </div>-->
+
+            <button type="submit" class="btn">Crear cuenta</button>
+
+            <div class="register-acc">
+                <p>¿Ya tienes cuenta? Ingrese </label><a
+                href="iniciar-sesion.html">aquí</a></p>
+            </div>
+
+            <div class="opciones">
+                <label for="Negocio">Elige tu tipo de negocio:</label>
+                <select name="Negocio" id="negocio">
+                    <option value="Peluqueria">Peluquería</option>
+                    <option value="Panaderia">Panadería</option>
+                    <option value="Kiosko">Kiosko</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
