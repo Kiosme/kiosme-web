@@ -36,12 +36,16 @@
         <h4 style="text-align: center;">Organice los productos o suministros</h4>
     </div>
     <br><br>
+    <!-- El siguiente form inserta datos en tabla "tienda" esperando la siguiente estrucutura:
+     id = INT11 PRIMARY
+     nombre_px = VARCHAR50
+     cant_px = INT11 -->
     <form action="Kiosme/concect.php" method="post">
         <div class="center" style="background-color: white; border-radius: 10px;">
             <div class="bg-light p-3" style="width: 650px;">
 
                 <label for="id2">ID:</label>
-                <input id="id" type="number" name="id" placeholder="ID"><br>
+                <input id="id" type="number" name="id" placeholder="ID" min="1" step="1"><br>
 
                 <label for="nombre">Producto:</label>
                 <input id="nombre_px" type="text" name="nombre_px" placeholder="Nombre del producto"><br>
@@ -55,8 +59,10 @@
     </form>
     <br><br>
 
+
+
     <div class="bg-light p-3">
-        <table class="table table-striped" id="add_tl" action="read.php">
+        <table class="table table-striped" id="add_tl">
             <tr>
                 <th>ID</th>
                 <th>Producto</th>
@@ -71,5 +77,23 @@
         </p>
     </div>
 
+
+
+    <br><br>
+    <div class="bg-light p-3" style="width: 250px; border-radius: 10px;">
+        <p>
+            <label>Producto: </label> <br>
+            <select name="prod-comunes" id="prod-comunes">
+                <option value="Manzana">Manzana</option>
+                <option value="Pera">Pera</option>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Jugo">Jugo</option>
+            </select><br>
+            <label>Rest. cant: </label><br>
+            <input type="number" name="resta-cant" id="resta-cant"><br><br>
+            <button class="btn btn-primary">Modificar producto</button><br><br>
+            <button class="btn btn-primary">borrar producto</button>
+        </p>
+    </div>
 </body>
 </html>
