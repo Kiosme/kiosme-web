@@ -4,7 +4,6 @@
         $password = "";
         $database = "kiosme";
 
-      
         $id = $_POST["id"];
         $nombre_px = $_POST["nombre_px"];
         $cant_px = $_POST["cant_px"];

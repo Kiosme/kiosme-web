@@ -60,22 +60,26 @@
     </form>
     <br><br>
 
-
-
-    <div class="bg-light p-3">
-        <table class="table table-striped" id="add_tl">
-            <tr>
-                <th>ID</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-            </tr>
-        </table>
-        <br>
-        <p>
-            <button class="btn btn-primary">Modificar producto</button>   
-            <button class="btn btn-primary">Guardar</button>   
-            <button class="btn btn-primary">Actualizar</button>
-        </p>
-    </div>
+    <script>
+     $(document).ready(function(){
+        displayData();
+    });
+    // display function
+    function displayData(){
+        var displayData="true";
+        $.ajax({
+            url:"mostrar.php",
+            type:'post',
+            data:{
+                displaySend:displayData
+            },
+            success:function(data,status){
+            $('#displayDataTable').html(data);
+            }
+        });
+    }
+        
+    </script>
+    
 </body>
 </html>
