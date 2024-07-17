@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <style>
         body{
-            background: url("fondo2.jpg");
+            background: url("fondos/fondo2.jpg");
             background-size: cover;
             background-position: center;
             background-color: rgb(15, 155, 236);
@@ -30,7 +30,7 @@
     <script src="Javascript/programa.js"></script>
     <title>Kiosme | Inventario</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
 </head>
 <body>
     <div class="bg-primary p-3">
@@ -143,7 +143,7 @@
             function displayData(){
                 var displayData="true";
                 $.ajax({
-                    url:"mostrar.php",
+                    url:"Kiosme/mostrar.php",
                     type:'post',
                     data:{
                         displaySend:displayData

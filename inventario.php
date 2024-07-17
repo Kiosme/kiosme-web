@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+
 
 
 <!DOCTYPE html>
@@ -17,7 +9,7 @@
     <meta charset="UTF-8">
     <style>
         body{
-            background: url("fondo2.jpg");
+            background: url("fondos/fondo2.jpg");
             background-size: cover;
             background-position: center;
             background-color: rgb(15, 155, 236);
@@ -37,7 +29,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Javascript/programa.js"></script>
     <title>Kiosme | Inventario</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
 </head>
 <body>
     <div class="bg-primary p-3">
@@ -62,31 +55,154 @@
                 <label for="cant">Cantidad:</label>
                 <input id="cant_px" type="number" name="cant_px" placeholder="Cantidad">
                 
-                <button class="btn btn-primary" onclick="crear_px()">Añadir</button>
+                <button class="btn btn-primary" onclick="crear_px()" class="btn btn-dark my-3" data-target="#completeModal">Añadir</button>
             </div>
+            <div id="displayDataTable"></div> 
         </div>
     </form>
     <br><br>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="completeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="completenombre_px">name</label>
+                    <input type="text" class="form-control" id="completenombre_px" 
+                      placeholder="Ingresa tu Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="completecant_px">cant</label>
+                    <input type="number" class="form-control" id="completecant_px" 
+                      placeholder="Ingresa tu cantidad">
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-dark" onclick="adduser()">Enviar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Update modal-->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+ aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Actualizar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="updatnombre_px">nombre</label>
+                        <input type="text" class="form-control" id="updatnombre_px" 
+                        placeholder="Ingresa tu Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="updatecant_px">cant</label>
+                        <input type="number" class="form-control" id="updatecant_px" 
+                        placeholder="Ingresa tu cant">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-dark" onclick="updateDetails()">Actualizar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    <input type="hidden" id="hiddendata">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-3">
+            <div id="displayDataTable"></div> 
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     <script>
-     $(document).ready(function(){
-        displayData();
-    });
-    // display function
-    function displayData(){
-        var displayData="true";
+        
+        $(document).ready(function(){
+            displayData();
+        });
+            // display function
+            function displayData(){
+                var displayData="true";
+                $.ajax({
+                    url:"Kiosme/mostrar.php",
+                    type:'post',
+                    data:{
+                        displaySend:displayData
+                    },
+                    success:function(data,status){
+                    $('#displayDataTable').html(data);
+                    }
+                });
+            }
+
+        //Eliminar Guardados
+        function DelateUser(delateid){
+            $.ajax({
+                url:"delete.php",
+                type:'post',
+                data:{
+                    deletesend:deleteid
+                },
+                success:function(data,status){
+                    displayData();
+                }
+            });
+            }
+
+        // Update de las funciones
+        function GetDetails(updateid){
+            $('#hiddendata').val(updateid);
+
+            $.post("update.php",{updateid:updateid},function(data,status){
+            var userid =JSON.parse(data);
+            $('#updatnombre_px').val(userid.nombre_px);
+            $('#updatecant_px').val(userid.cant_px);
+
+            });
+
+            $('#updateModal').modal("show");
+            }
+
+
+        //funcion para actualizar evento onclick 
+        function updateDetails(){
+        var updatename=$('#updatnombre_px').val();
+        var updateemail=$('#updatecant_px').val();
+        var hiddendata=$('#hiddendata').val();
+        console.log("MODIFICAR")
         $.ajax({
-            url:"mostrar.php",
+            url:"update.php",
             type:'post',
             data:{
-                displaySend:displayData
+                updatnombre_px:updatename,
+                updatecant_px:updateemail,  
             },
             success:function(data,status){
-            $('#displayDataTable').html(data);
+                $('#updateModal').modal('hide');
+                displayData();
             }
         });
-    }
-        
+
+        }
     </script>
     
 </body>
