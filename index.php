@@ -9,7 +9,5 @@
     <?php
         require 'Inventario.html';
     ?>
-
-    
 </body>
 </html>

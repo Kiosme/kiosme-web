@@ -1,5 +1,5 @@
 <?php
-include 'concect.php';
+include 'Kiosme\concect.php';
 if(isset($_POST['displaySend'])){
     $table='<table class="table table-striped" id="add_tl">
     <thead class="thead-dark">
@@ -9,13 +9,13 @@ if(isset($_POST['displaySend'])){
             <th>Cantidad</th>
         </tr>
       </thead>';
-      $sql="Select * from `tienda`";
-      $result=mysqli_query($con,$sql);
+      $sql_1="SELECT * FROM tienda";
+      $result=mysqli_query($con,$sql_1);
       $number=1;
       while($row=mysqli_fetch_assoc($result)){
-          $id=$row['id'];
-          $nombre_px=$row['nombre_px'];
-          $cant_px=$row['cant_px'];
+          //$id=$row['id'];
+          //$nombre_px=$row['nombre_px'];
+          //$cant_px=$row['cant_px'];
           $table.='<tr>
           <td scope="row">'.$number.'</td>
           <td>'.$id.'</td>
