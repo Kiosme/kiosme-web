@@ -1,5 +1,5 @@
 <?php
-include 'Kiosme\read.php';
+
 if(isset($_POST['displaySend'])){
     $table='<table class="table table-striped" id="add_tl">
     <thead class="thead-dark">

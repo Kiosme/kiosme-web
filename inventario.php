@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,7 +39,7 @@
      id = INT11 PRIMARY
      nombre_px = VARCHAR50
      cant_px = INT11 -->
-    <form action="Kiosme/concect.php" method="post">
+    <form action="Kiosme/insertar.php" method="post">
         <div class="center" style="background-color: white; border-radius: 10px;">
             <div class="bg-light p-3" style="width: 650px;">
 
@@ -57,85 +54,58 @@
                 
                 <button class="btn btn-primary" onclick="crear_px()" class="btn btn-dark my-3" data-target="#completeModal">Añadir</button>
             </div>
-            <div id="displayDataTable"></div> 
+            
         </div>
     </form>
     <br><br>
 
-
-
-<!-- Modal -->
-<div class="modal fade" id="completeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="completenombre_px">name</label>
-                    <input type="text" class="form-control" id="completenombre_px" 
-                      placeholder="Ingresa tu Nombre">
-                </div>
-                <div class="form-group">
-                    <label for="completecant_px">cant</label>
-                    <input type="number" class="form-control" id="completecant_px" 
-                      placeholder="Ingresa tu cantidad">
-                </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-dark" onclick="adduser()">Enviar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-
-            </div>
-        </div>
+    <div class="center" style="background-color: white; border-radius: 10px;">
+        <div id="displayDataTable"></div> 
     </div>
-</div>
+
 
 <!--Update modal-->
 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
- aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Actualizar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="updatnombre_px">nombre</label>
-                        <input type="text" class="form-control" id="updatnombre_px" 
-                        placeholder="Ingresa tu Nombre">
+     aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Actualizar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label for="updatecant_px">cant</label>
-                        <input type="number" class="form-control" id="updatecant_px" 
-                        placeholder="Ingresa tu cant">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="updatename">name</label>
+                            <input type="text" class="form-control" id="updatename" 
+                            placeholder="Ingresa tu Nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="updateemail">email</label>
+                            <input type="email" class="form-control" id="updateemail" 
+                            placeholder="Ingresa tu Email">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-dark" onclick="updateDetails()">Actualizar</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                    <input type="hidden" id="hiddendata">
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" onclick="updateDetails()">Actualizar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        <input type="hidden" id="hiddendata">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <div class="container my-3">
             <div id="displayDataTable"></div> 
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajaxs/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+
     <script>
-        
         $(document).ready(function(){
             displayData();
         });
@@ -143,7 +113,7 @@
             function displayData(){
                 var displayData="true";
                 $.ajax({
-                    url:"Kiosme/mostrar.php",
+                    url:"Kiosme/read.php",
                     type:'post',
                     data:{
                         displaySend:displayData
@@ -155,9 +125,9 @@
             }
 
         //Eliminar Guardados
-        function DelateUser(delateid){
+        function DeleteUser(deleteid){
             $.ajax({
-                url:"delete.php",
+                url:"Kiosme/delete.php",
                 type:'post',
                 data:{
                     deletesend:deleteid
@@ -172,10 +142,10 @@
         function GetDetails(updateid){
             $('#hiddendata').val(updateid);
 
-            $.post("update.php",{updateid:updateid},function(data,status){
+            $.post("Kiosme/update.php",{updateid:updateid},function(data,status){
             var userid =JSON.parse(data);
-            $('#updatnombre_px').val(userid.nombre_px);
-            $('#updatecant_px').val(userid.cant_px);
+            $('#nombre_px').val(userid.name);
+            $('#cant_px').val(userid.email);
 
             });
 
@@ -185,12 +155,12 @@
 
         //funcion para actualizar evento onclick 
         function updateDetails(){
-        var updatename=$('#updatnombre_px').val();
-        var updateemail=$('#updatecant_px').val();
+        var updatename=$('#nombre_px').val();
+        var updateemail=$('#cant_px').val();
         var hiddendata=$('#hiddendata').val();
         console.log("MODIFICAR")
         $.ajax({
-            url:"update.php",
+            url:"Kiosme/update.php",
             type:'post',
             data:{
                 updatnombre_px:updatename,

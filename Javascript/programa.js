@@ -6,8 +6,8 @@ function crear_px(){
     //las variables que se concectan con la interfaz
     var crear_tbl = document.getElementById("add_tl");
     let id1 = document.getElementById("id").value;
-    let nombre_px_inp = document.getElementById("nombre_px").value;
-    let cantidad_px_inp = document.getElementById("cant_px").value;
+    let nombre_px_inp = document.getElementById("completenombre_px").value;
+    let cantidad_px_inp = document.getElementById("completecant_px").value;
 
     //donde va la creacion de tablas
 
