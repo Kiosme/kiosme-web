@@ -1,6 +1,5 @@
 <?php 
 include 'concect.php';
-extract($_POST);
 if(isset($_POST['updateid'])){
     $user_id=$_POST['updateid'];
 
@@ -21,11 +20,11 @@ if(isset($_POST['updateid'])){
 
 if(isset($_POST['hiddendata'])){
     $uniqueid=$_POST['hiddendata'];
-    $name=$_POST['nombre_px'];
-    $email=$_POST['cant_px'];
+    $nombre_px=$_POST['updatename'];
+    $cant_px=$_POST['updatequantity'];
 
 
-    $sql="update `tienda` set name='$name',email='$email' where id= $uniqueid";
+    $sql="update `tienda` set nombre_px='$nombre_px',cant_px='$cant_px' where id= $uniqueid";
 
     $result=mysqli_query($conn,$sql);
 

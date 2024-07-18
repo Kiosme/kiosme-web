@@ -77,14 +77,14 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="updatename">name</label>
+                            <label for="updatename">Nombre producto</label>
                             <input type="text" class="form-control" id="updatename" 
-                            placeholder="Ingresa tu Nombre">
+                            placeholder="Ingresa el Nombre del producto" name="updatename">
                         </div>
                         <div class="form-group">
-                            <label for="updateemail">email</label>
-                            <input type="email" class="form-control" id="updateemail" 
-                            placeholder="Ingresa tu Email">
+                            <label for="updatequantity">cantidad</label>
+                            <input type="number" class="form-control" id="updatequantity" 
+                            placeholder="Ingresa tu cantidad"name="updatequantity">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -143,34 +143,33 @@
             $('#hiddendata').val(updateid);
 
             $.post("Kiosme/update.php",{updateid:updateid},function(data,status){
-            var userid =JSON.parse(data);
-            $('#nombre_px').val(userid.name);
-            $('#cant_px').val(userid.email);
+                var userid=JSON.parse(data);
+                $('#updatename').val(userid.nombre_px);
+                $('#updatequantity').val(userid.cant_px);
 
             });
 
             $('#updateModal').modal("show");
-            }
-
-
+        }
         //funcion para actualizar evento onclick 
         function updateDetails(){
-        var updatename=$('#nombre_px').val();
-        var updateemail=$('#cant_px').val();
-        var hiddendata=$('#hiddendata').val();
-        console.log("MODIFICAR")
-        $.ajax({
-            url:"Kiosme/update.php",
-            type:'post',
-            data:{
-                updatnombre_px:updatename,
-                updatecant_px:updateemail,  
-            },
-            success:function(data,status){
-                $('#updateModal').modal('hide');
-                displayData();
-            }
-        });
+            var updatename=$('#updatename').val();
+            var updateemail=$('#updatequantity').val();
+            var hiddendata=$('#hiddendata').val();
+
+            console.log("MODIFICAR")
+            $.ajax({
+                    url:"Kiosme/update.php",
+                    type:'post',
+                    data:{
+                        updatename:updatename,
+                        updatequantity:updatequantity,    
+                    },
+                    success:function(data,status){
+                        $('#updateModal').modal('hide');
+                        displayData();
+                    }
+            });
 
         }
     </script>
