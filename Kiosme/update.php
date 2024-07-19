@@ -27,7 +27,7 @@ if(isset($_POST['hiddendata'])){
     $sql="update `tienda` set nombre_px='$nombre_px',cant_px='$cant_px' where id= $uniqueid";
 
     $result=mysqli_query($conn,$sql);
-
+   
 }
 
 

@@ -15,4 +15,3 @@ function crear_px(){
     new_row.insertCell(1).innerHTML = nombre_px_inp;
     new_row.insertCell(2).innerHTML = cantidad_px_inp;
 }
-

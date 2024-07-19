@@ -154,7 +154,7 @@
         //funcion para actualizar evento onclick 
         function updateDetails(){
             var updatename=$('#updatename').val();
-            var updateemail=$('#updatequantity').val();
+            var updatequantity=$('#updatequantity').val();
             var hiddendata=$('#hiddendata').val();
 
             console.log("MODIFICAR")
@@ -163,7 +163,8 @@
                     type:'post',
                     data:{
                         updatename:updatename,
-                        updatequantity:updatequantity,    
+                        updatequantity:updatequantity, 
+                        hiddendata:hiddendata      
                     },
                     success:function(data,status){
                         $('#updateModal').modal('hide');
