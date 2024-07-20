@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        require 'Inventario.php';
+        require 'index.HTML';
     ?>
 </body>
 </html>
