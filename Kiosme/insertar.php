@@ -24,7 +24,7 @@ if(isset($_POST['id']) && isset($_POST['nombre_px']) && isset($_POST['cant_px'])
 }
 $conn->close();
 echo "<script>alert('Datos Ingresados Correctamente');</script>";
-echo "<script>url:'Kiosme/inventario.php';</script>";
+echo "<script>url:'Kiosme/inventario.html';</script>";
 
 
 ?>
